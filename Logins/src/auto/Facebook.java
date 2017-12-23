@@ -25,9 +25,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 
 public class Facebook {
+	
+	/**
+	 * Entry point
+	 * 
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
+		
+		// Set path for geckodriver
+		
 		System.setProperty("geckodriver", "/user/bin");
+		
+		// Get credentials from the user
 		
 		String username;
 		String password;
@@ -39,6 +50,8 @@ public class Facebook {
 		
 		System.out.print("What is your password?: ");
 		password = in.nextLine();
+	
+		// Launch browser and enter in credentials
 		
 		WebDriver driver = new FirefoxDriver();
 		driver.get("http://www.facebook.com");
