@@ -1,3 +1,13 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Title:			Vanguard
+// Files:			Vanguard.java
+//
+// Author:			Nolan J. Blythe
+// Version: 		1.0
+//
+////////////////////////////////////////////////////////////////////////////////
+
 package auto;
 
 import org.openqa.selenium.By;
@@ -6,10 +16,30 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Scanner;
 
+
+/**
+ * Class that prompts the user for credentials and automatically
+ * logs them into Vanguard.
+ * 
+ * @author nolan
+ *
+ */
+
 public class Vanguard {
 
+	/**
+	 * Entry point
+	 * 
+	 * @param args
+	 */
+	
 	public static void main(String[] args) {
+		
+		// Set path for geckodriver
+		
 		System.setProperty("geckodriver", "/user/bin");
+		
+		// Get credentials from the user
 		
 		String username;
 		String password;
@@ -21,6 +51,8 @@ public class Vanguard {
 		
 		System.out.print("What is your password?: ");
 		password = in.nextLine();
+		
+		// Launch browser and enter credentials
 		
 		WebDriver driver = new FirefoxDriver();
 		driver.get("https://investor.vanguard.com/my-account/log-on");
